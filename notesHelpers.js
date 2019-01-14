@@ -2,9 +2,29 @@
 const db = require('./dbConfig');
 
 module.exports = {
-  getNotes
+  getNotes,
+  createNote,
+  editNote,
+  deleteNote
 };
 
-function getNotes() {
-  return db('notes');
+function getNotes(id) {
+  let query = db('notes');
+  return id ? query.where({ id }) : query;
+}
+
+function createNote(note) {
+  return db('notes').insert(note);
+}
+
+function editNote(id, changes) {
+  return db('notes')
+    .where({ id })
+    .update(changes);
+}
+
+function deleteNote(id) {
+  return db('notes')
+    .where({ id })
+    .del();
 }
