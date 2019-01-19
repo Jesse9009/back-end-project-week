@@ -1,6 +1,6 @@
 // Update with your config settings.
 const localPgConnection = {
-  host: '', // address to find the db server
+  host: 'localhost', // address to find the db server
   database: '',
   user: '',
   password: ''

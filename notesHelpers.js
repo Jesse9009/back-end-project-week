@@ -9,7 +9,7 @@ module.exports = {
 };
 
 function getNotes(id) {
-  let query = db('notes');
+  let query = db('notes').orderBy('id');
   return id ? query.where({ id }) : query;
 }
 
