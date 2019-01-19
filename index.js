@@ -1,3 +1,4 @@
+require('dotenv').config(); // load the .env content
 // Import required packages and files
 const express = require('express');
 const notesRouter = require('./notesRoutes');
@@ -22,6 +23,7 @@ server.use('/api/notes', notesRouter);
 
 //
 const PORT = process.env.PORT || 4040;
+
 server.listen(PORT, () => {
-  console.log(`Server is up and running on port ${PORT}.`);
+  console.log(`\n=== Server is up and running on port ${PORT} ===\n`);
 });
